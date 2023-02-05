@@ -53,15 +53,15 @@ submitBtn.addEventListener('click', function (){
 
 
 
-    fetchAll = (city, isFromSavedSearch) => {
-        fetch('http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&appid=4b2a0930a9f598b508cdf86601bc83db')
+fetchAll = (city, isFromSavedSearch) => {
+    fetch('http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&appid=4b2a0930a9f598b508cdf86601bc83db')
     .then (function (response) {
         if (response.ok){
         return response.json()
              } else {alert("Input a valid city!");}
-})
+    })
     .then (function (data) {
-    console.log(data);
+        console.log(data);
          var cityNameValue = data.name;
          var tempValue = data.main.temp;
          var windSpeedValue = data.wind.speed;
@@ -73,7 +73,7 @@ submitBtn.addEventListener('click', function (){
          humidity.textContent = "Humidity: " + humidityValue + " %";
     
     
-})
+    })
 
     fetch('https://api.openweathermap.org/data/2.5/forecast?q='+city+'&units=imperial&appid=4b2a0930a9f598b508cdf86601bc83db')
     .then (function (response) {
@@ -97,43 +97,29 @@ submitBtn.addEventListener('click', function (){
         
         if (!isFromSavedSearch){
         savedSearches.push(data.city.name);
-        localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
         displaySavedSearches();
         }
     })
-    }
+};
 
-    displaySavedSearches = () => {
-        historyWrapperEl.innerHTML= "";
-        for (i=0; i<savedSearches.length; i++) {
-            var btn = document.createElement("BUTTON");
-            btn.innerHTML = savedSearches[i];
-            btn.onclick = savedSearchClick;
-            historyWrapperEl.appendChild(btn);
-            
-        }
-    }
-
-    savedSearchClick = (btn) => {
-        fetchAll(btn.target.innerHTML, true);
-        // var ss = localStorage.getItem('savedSearches')
-        // var objSS = JSON.parse(ss);
-        // var elI = 0
-        // var data = objSS[0];
-        // for (i=0; i<objSS.length; i=i+8) {
-        //     cardWrappers[elI].style.display = 'block';
-        //     fcHeaders[elI].textContent = dayjs(data.list[i].dt_txt).format('MM/DD/YY');
-        //     fcTemps[elI].textContent = data.list[i].main.temp + " F";
-        //     fcWindspeeds[elI].textContent = data.list[i].wind.speed + ' mph';
-        //     fcHumidities[elI].textContent = data.list[i].main.humidity + " %";
-        //     fcIcons[elI].src = "https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + ".png";
-        //     elI++;
-        // }
-        
+displaySavedSearches = () => {
+    historyWrapperEl.innerHTML= "";
+    for (i=0; i<savedSearches.length; i++) {
+        var btn = document.createElement("BUTTON");
+        btn.innerHTML = savedSearches[i];
+        btn.onclick = savedSearchClick;
+        historyWrapperEl.appendChild(btn);
         
     }
+}
 
-// });
+savedSearchClick = (btn) => {
+    fetchAll(btn.target.innerHTML, true);
+    
+    
+}
+
+
 
 
 
