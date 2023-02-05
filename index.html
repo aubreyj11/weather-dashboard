@@ -10,19 +10,64 @@
 </head>
 <body>
     <nav class="nav">Weather Dashboard</nav>
-    <h1 class="searchHeader">Search for a City:</h1>
-    <div class="input">
-        <input class="inputValue" type="text" placeholder="Enter City Name Here">
-        <input class="submitBtn" type="submit" value="Submit">
-    </div>
+    <div class="gridContainer">
+        <aside class="searchCtn">
+            <h1 class="searchHeader">Search for a City:</h1>
+            <div class="input">
+                <input class="inputValue" type="text" placeholder="Enter City Name Here">
+                <input class="submitBtn" type="submit" value="Submit">
+            </div>
+            <div id="historyWrapper"></div>
+        </aside>
 
-    <div class="weatherDisplay">
-        <h2 class="cityName"></h2>
-        <p class="temp"></p>
-        <p class="windSpeed"></p>
-        <p class="humidity"></p>
+        <div class="weatherDisplay">
+            <h2 class="cityName"></h2>
+            <p class="temp"></p>
+            <p class="windSpeed"></p>
+            <p class="humidity"></p>
+
+            <div class="forecast">
+                <div id="card1" class="card" style="display:none">
+                    <div class="fc-header-1"></div>
+                    <img class="fc-icon-1"></img>
+                    <div class="fc-temp-1"></div>
+                    <div class="fc-windspeed-1"></div>
+                    <div class="fc-humidity-1"></div>
+                </div>
+                <div id="card2" class="card" style="display:none">
+                    <div class="fc-header-2"></div>
+                    <img class="fc-icon-2"></img>
+                    <div class="fc-temp-2"></div>
+                    <div class="fc-windspeed-2"></div>
+                    <div class="fc-humidity-2"></div>
+                </div>
+                <div id="card3" class="card" style="display:none">
+                    <div class="fc-header-3"></div>
+                    <img class="fc-icon-3"></img>
+                    <div class="fc-temp-3"></div>
+                    <div class="fc-windspeed-3"></div>
+                    <div class="fc-humidity-3"></div>
+                </div>
+                <div id="card4" class="card" style="display:none">
+                    <div class="fc-header-4"></div>
+                    <img class="fc-icon-4"></img>
+                    <div class="fc-temp-4"></div>
+                    <div class="fc-windspeed-4"></div>
+                    <div class="fc-humidity-4"></div>
+                </div>
+                <div id="card5" class="card" style="display:none">
+                    <div class="fc-header-5"></div>
+                    <img class="fc-icon-5"></img>
+                    <div class="fc-temp-5"></div>
+                    <div class="fc-windspeed-5"></div>
+                    <div class="fc-humidity-5"></div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
-    
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
