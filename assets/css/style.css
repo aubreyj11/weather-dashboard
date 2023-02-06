@@ -82,6 +82,7 @@ body{
     background-color: rgb(197, 184, 208);
     padding: 15px;
     margin: 10px;
+    width: 150px;
 }
 .card2 {
     list-style: none;
@@ -122,5 +123,28 @@ body{
 hr {
     color: black;
     width: 250px;
+}
+
+@media screen and (max-width: 500px) {
+    .forecast {
+        flex-direction: column;
+        width: 200px;
+    }
+
+    .searchBtns {
+        width: 80px;
+    }
+
+    .inputValue {
+        width: 110px;
+    }
+
+    .submitBtn {
+        width: 80px;
+    }
+
+    hr {
+        width: 90px;
+    }
 }
 
