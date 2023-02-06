@@ -99,5 +99,28 @@ body{
 .forecast {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    margin: 100px;
+}
+
+.searchBtns {
+    text-align: center;
+    width: 150px;
+    padding: 5px;
+    margin: 8px 100px 8px 100px;
+    border-color: rgb(100, 92, 141);
+    border-radius: 5px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(208, 197, 217);
+}
+
+#historyWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    color: black;
+    width: 250px;
 }
 

@@ -106,6 +106,7 @@ displaySavedSearches = () => {
     historyWrapperEl.innerHTML= "";
     for (i=0; i<savedSearches.length; i++) {
         var btn = document.createElement("BUTTON");
+        btn.classList.add('searchBtns');
         btn.innerHTML = savedSearches[i];
         btn.onclick = savedSearchClick;
         historyWrapperEl.appendChild(btn);
