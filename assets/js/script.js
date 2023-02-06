@@ -54,7 +54,7 @@ submitBtn.addEventListener('click', function (){
 
 
 fetchAll = (city, isFromSavedSearch) => {
-    fetch('http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&appid=4b2a0930a9f598b508cdf86601bc83db')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&appid=4b2a0930a9f598b508cdf86601bc83db')
     .then (function (response) {
         if (response.ok){
         return response.json()
