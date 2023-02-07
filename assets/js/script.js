@@ -115,13 +115,19 @@ displaySavedSearches = () => {
         historyWrapperEl.appendChild(btn);
         
     }
+    JSON.stringify(savedSearches);
+    localStorage.setItem("searches", savedSearches);
+    
 }
+
+localStorage.getItem("searches");
 
 savedSearchClick = (btn) => {
     fetchAll(btn.target.innerHTML, true);
     
     
 }
+
 
 
 
