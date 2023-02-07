@@ -15,7 +15,8 @@ var temp = document.querySelector('.temp');
 var windSpeed = document.querySelector('.windSpeed');
 var humidity = document.querySelector('.humidity');
 var forecast = document.querySelector('.forecast');
-var dateToday  = dayjs().format('MM/DD/YY')
+var icon = document.querySelector('.icon');
+var dateToday  = dayjs().format('MM/DD/YY');
 cardWrappers.push(document.querySelector('#card1'));
 cardWrappers.push(document.querySelector('#card2'));
 cardWrappers.push(document.querySelector('#card3'));
@@ -63,6 +64,7 @@ fetchAll = (city, isFromSavedSearch) => {
     .then (function (data) {
         console.log(data);
          var cityNameValue = data.name;
+         var iconValue = data.weather[0].icon;
          var tempValue = data.main.temp;
          var windSpeedValue = data.wind.speed;
          var humidityValue = data.main.humidity;
@@ -71,6 +73,7 @@ fetchAll = (city, isFromSavedSearch) => {
          temp.textContent = "Temperature: " + tempValue + " F";
          windSpeed.textContent = "Wind Speed: " + windSpeedValue + " mph";
          humidity.textContent = "Humidity: " + humidityValue + " %";
+         icon.src = "https://openweathermap.org/img/wn/" + iconValue + ".png";
     
     
     })

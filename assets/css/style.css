@@ -125,6 +125,10 @@ hr {
     width: 250px;
 }
 
+.icon {
+    margin: 5px;
+}
+
 @media screen and (max-width: 500px) {
     .forecast {
         flex-direction: column;
