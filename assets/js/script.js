@@ -117,10 +117,12 @@ displaySavedSearches = () => {
     }
     JSON.stringify(savedSearches);
     localStorage.setItem("searches", savedSearches);
+    localStorage.getItem('searches');
     
 }
 
-localStorage.getItem("searches");
+
+
 
 savedSearchClick = (btn) => {
     fetchAll(btn.target.innerHTML, true);
